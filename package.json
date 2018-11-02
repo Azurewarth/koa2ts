@@ -1,0 +1,30 @@
+{
+  "name": "ts_koa2",
+  "version": "0.0.0",
+  "description": "typescript description of koa2",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run server",
+    "server": "node dist/app.js",
+    "build": "npm run copy && tsc",
+    "watch": "npm run copy && tsc -w",
+    "copy": "node build/build.server.js"
+  },
+  "author": "yichongwen",
+  "license": "ISC",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^5.0.1",
+    "@types/koa-convert": "^1.2.1",
+    "@types/koa-router": "^7.0.32",
+    "@types/koa-static": "^4.0.0",
+    "@types/koa-views": "^2.0.3",
+    "@types/node": "^10.11.7",
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.3"
+  }
+}
