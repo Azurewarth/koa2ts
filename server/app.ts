@@ -31,6 +31,7 @@ app.use(views(__dirname + '/template', {
 
 // 处理404
 app.use(async (ctx, next) => {
+    next()
     if(ctx.status === 404) 
         await ctx.render('fail')
 })
