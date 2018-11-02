@@ -31,19 +31,6 @@
             background: #00C2DE;
         }
     </style>
-    <script>    
-        window.onload = function() {
-            let closeBtn = document.getElementById('close-btn');
-            let tryBtn = document.getElementById('try-later');
-            closeBtn.onclick = function() {
-                window.location.href = "jsbridge://ui/close";
-            }
-
-            tryBtn.onclick = function() {
-                history.back();
-            }
-        }
-    </script>
 </head>
 <body>
     <div id="wrap">
