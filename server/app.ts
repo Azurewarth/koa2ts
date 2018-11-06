@@ -26,7 +26,7 @@ app.use(convert(bodyparser()))
 app.use(serve(path.join(__dirname, '..', '/views')))
 
 // 配置模板引擎
-app.use(views(__dirname + '/template', {
+app.use(views(path.join(__dirname, '/template'), {
     extension: 'html'
 }))
 
