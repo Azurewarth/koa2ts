@@ -1,4 +1,4 @@
-import Koa = require('koa')
+import * as Koa from 'koa'
 import First from './middleware/first.middleware'
 import Second from './middleware/second.middleware'
 

@@ -1,4 +1,4 @@
-import KoaRouter = require('koa-router')
+import * as KoaRouter from 'koa-router'
 let router = new KoaRouter()
 
 interface KoaMethodParams {
