@@ -2,9 +2,11 @@
  * yichongwen.
  */
 "use strict"
-process.env.NODE_ENV = process.env.NODE_ENV || process.env.DOCKER_ENV || 'dev'
-const env  = process.env.NODE_ENV || 'dev'
-const port = process.env.PORT || 3030
+import config from './config'
+
+process.env.NODE_ENV = process.env.NODE_ENV || process.env.DOCKER_ENV || 'local'
+const env  = process.env.NODE_ENV || 'local'
+const port = process.env.PORT || config.port[env]
 const host = process.env.HOST || '0.0.0.0'
 
 import * as path from 'path'
