@@ -7,6 +7,7 @@ const env  = process.env.NODE_ENV || 'dev'
 const port = process.env.PORT || 3030
 const host = process.env.HOST || '0.0.0.0'
 
+import path         = require('path')
 import Koa          = require('koa')
 import serve        = require('koa-static')
 import bodyparser   = require('koa-bodyparser')
@@ -22,7 +23,7 @@ const app: Koa      = new Koa()
 app.use(convert(bodyparser()))
 
 // 静态文件的监听
-app.use(serve(__dirname))
+app.use(serve(path.join(__dirname, '..', '/views')))
 
 // 配置模板引擎
 app.use(views(__dirname + '/template', {
