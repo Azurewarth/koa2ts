@@ -56,6 +56,6 @@ export default class TestController {
 
     @Post('/nothing')
     async nothing(ctx) {
-        ctx.body = { test: ctx.request.body.nothing }
+        ctx.body = { test: ctx.request.one.nothing }
     }
 }

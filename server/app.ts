@@ -31,19 +31,16 @@ app.use(views(path.join(__dirname, '/template'), {
     extension: 'html'
 }))
 
-// 处理404
-app.use(async (ctx, next) => {
-    next()
-    if(ctx.status === 404) 
-        await ctx.render('fail')
-})
-
-// 处理500
+// 处理500 && 404
 app.use(async (ctx, next) => {
     try {
-        next()
+        await next()
+        if(ctx.status === 404) {
+            await ctx.render('fail')
+        }
     } catch(err) {
-        ctx.throw(500);
+        console.log('server error: ', err)
+        await ctx.throw(500)
     }
 })
 
