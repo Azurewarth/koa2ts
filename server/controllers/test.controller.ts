@@ -1,7 +1,7 @@
 /**
  * proxy controller
  */
-import { Controller, Get } from '../decorator'
+import { Controller, Get, Post } from '../decorator'
 
 function controllerMiddleOne(ctx,next) {
     console.log('set by controllerMiddleOne start...')
@@ -52,5 +52,10 @@ export default class TestController {
         console.log('retry start...')
         ctx.status = 404
         console.log('retry end...')   
+    }
+
+    @Post('/nothing')
+    async nothing(ctx) {
+        ctx.body = { test: ctx.request.body.nothing }
     }
 }

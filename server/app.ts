@@ -7,12 +7,11 @@ const env  = process.env.NODE_ENV || 'dev'
 const port = process.env.PORT || 3030
 const host = process.env.HOST || '0.0.0.0'
 
-import path         = require('path')
-import Koa          = require('koa')
-import serve        = require('koa-static')
-import bodyparser   = require('koa-bodyparser')
-import convert      = require('koa-convert')
-import views        = require('koa-views')
+import * as path from 'path'
+import * as Koa from 'koa'
+import * as serve from 'koa-static'
+import * as views from 'koa-views'
+import * as bodyparser from 'koa-bodyparser'
 
 import controllerServer from './controllers'
 import middlewareServer from './middlewares'
@@ -20,7 +19,7 @@ import middlewareServer from './middlewares'
 const app: Koa      = new Koa()
 
 // 参数传递解析
-app.use(convert(bodyparser()))
+app.use(bodyparser())
 
 // 静态文件的监听
 app.use(serve(path.join(__dirname, '..', '/views')))

@@ -1,4 +1,4 @@
-import Koa      = require('koa')
+import * as Koa from 'koa'
 import testController from './controllers/test.controller'
 
 export default function(app:Koa) {
